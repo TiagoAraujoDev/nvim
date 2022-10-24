@@ -61,6 +61,7 @@ return packer.startup(function(use)
   use { "karb94/neoscroll.nvim", commit = "54c5c419f6ee2b35557b3a6a7d631724234ba97a" }
   use { "folke/todo-comments.nvim", commit = "96391ae41e63a5edba260adfd7312462b54ddc8e" }
   use { "kylechui/nvim-surround", commit = "81f672ad6525b5d8cc27bc6ff84636cc12664485" }
+  use { "ChristianChiarulli/harpoon", commit = "a2487c29dba9c3befbb57ccd8773b7f617fc593a" }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
@@ -109,6 +110,7 @@ return packer.startup(function(use)
   -- Navic
   use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig", commit = "cfae8efd9cae64195d66b40067d59c534a970712" }
   use { "feline-nvim/feline.nvim", commit = "f26dd12e5b0e39a8dd2abcb46066c250b5651de9"}
+  use { "fgheng/winbar.nvim", commit = "13739fdb31be51a1000486189662596f07a59a31"}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

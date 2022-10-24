@@ -55,6 +55,10 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
+-- Harpoon
+keymap("n", "<TAB>", ":Telescope harpoon marks initial_mode=normal<CR>", opts)
+keymap("n", "mm", ":lua require('harpoon.mark').add_file()<CR>")
+
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
@@ -62,7 +66,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>b", ":Telescope buffers<CR><ESC>", opts)
+keymap("n", "<leader>b", ":Telescope buffers initial_mode=normal<CR><ESC>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)

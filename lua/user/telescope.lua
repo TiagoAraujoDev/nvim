@@ -4,6 +4,7 @@ if not status_ok then
 end
 
 local actions = require("telescope.actions")
+require("telescope").load_extension('harpoon')
 
 telescope.setup({
 	defaults = {
