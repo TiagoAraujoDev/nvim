@@ -24,8 +24,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
-
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
+
 -- vim.api.nvim_create_autocmd({ "BufEnter" }, {
 --   callback = function()
 --     vim.cmd [[
@@ -57,20 +57,65 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-	pattern = { "*.java" },
-	callback = function()
-		vim.lsp.codelens.refresh()
-	end,
-})
-vim.cmd [[
-augroup illuminate_augroup
-  autocmd!
-  autocmd VimEnter * hi illuminatedWord cterm=reverse gui=italic
-augroup END
-]]
--- vim.api.nvim_create_autocmd({ "VimEnter" }, {
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+-- 	pattern = { "*.java" },
 -- 	callback = function()
--- 		vim.cmd("hi link illuminatedWord StatusLineNC")
+-- 		vim.lsp.codelens.refresh()
 -- 	end,
 -- })
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.cmd [[ 
+      hi LspReferenceRead gui=NONE guibg=#424A56
+    ]]
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.cmd [[ 
+      hi LspReferenceWrite gui=NONE guibg=#424A56
+    ]]
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.cmd [[ 
+      hi LspReferenceText gui=NONE guibg=#424A56
+    ]]
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.cmd [[ 
+      hi IlluminatedWordRead gui=NONE guibg=#424A56
+    ]]
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.cmd [[ 
+      hi IlluminatedWordWrite gui=NONE guibg=#424A56
+    ]]
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.cmd [[ 
+      hi IlluminatedWordText gui=NONE guibg=#424A56
+    ]]
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.cmd [[ 
+      hi link illuminatedWord LspReferenceText
+    ]]
+	end,
+})
