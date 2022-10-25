@@ -1,29 +1,8 @@
+local M = {}
 local navic_status_ok, navic = pcall(require, "nvim-navic")
 if not navic_status_ok then
 	return
 end
-
-local feline_status_ok, feline = pcall(require, "feline")
-if not feline_status_ok then
-	return
-end
-
-local components = {
-	active = { {}, {}, {} },
-}
-
-table.insert(components.active[1], {
-	provider = function()
-		return navic.get_location()
-	end,
-	enabled = function()
-		return navic.is_available()
-	end,
-})
-
-feline.winbar.setup({
-	components = components,
-})
 
 navic.setup({
 	icons = {
@@ -54,10 +33,20 @@ navic.setup({
 		Operator = " ",
 		TypeParameter = " ",
 	},
-	highlight = false,
+	highlight = true,
 	separator = " > ",
 	depth_limit = 0,
 	depth_limit_indicator = "..",
 })
 
+function M.eval()
+  local file_name = vim.api.nvim_eval_statusline('%t', {}).str
+  local modified = vim.api.nvim_eval_statusline('%m', {}).str == '[+]' and '●' or ''
+  -- print(navic.get_data())
+
+  return string.format('%s > %s %s', file_name, navic.get_location(), modified)
+end
+
+
 vim.g.navic_silence = true
+return M
