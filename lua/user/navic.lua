@@ -1,4 +1,5 @@
 local M = {}
+
 local navic_status_ok, navic = pcall(require, "nvim-navic")
 if not navic_status_ok then
 	return
@@ -47,6 +48,6 @@ function M.eval()
   return string.format('%s > %s %s', file_name, navic.get_location(), modified)
 end
 
-
 vim.g.navic_silence = true
+
 return M
