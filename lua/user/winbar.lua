@@ -1,41 +1,39 @@
-local status_ok, winbar = pcall(require, "winbar")
-if not status_ok then
-	return
+local navic_status_ok, navic = pcall(require, "nvim-navic")
+if not navic_status_ok then
+	return ""
 end
 
-winbar.setup({
-	enabled = true,
-
-	show_file_path = false,
-	show_symbols = true,
-  show_editor_state = true,
-
-	colors = {
-		path = "", -- You can customize colors like #c946fd
-		file_name = "",
-		symbols = "",
-	},
-
+navic.setup({
 	icons = {
-		file_icon_default = "",
-		seperator = ">",
-		editor_state = "●",
-		lock_icon = "",
+		File = " ",
+		Module = " ",
+		Namespace = " ",
+		Package = " ",
+		Class = " ",
+		Method = " ",
+		Property = " ",
+		Field = " ",
+		Constructor = " ",
+		Enum = "練",
+		Interface = "練",
+		Function = " ",
+		Variable = " ",
+		Constant = " ",
+		String = " ",
+		Number = " ",
+		Boolean = "蘒 ",
+		Array = " ",
+		Object = " ",
+		Key = " ",
+		Null = "ﳠ ",
+		EnumMember = " ",
+		Struct = " ",
+		Event = " ",
+		Operator = " ",
+		TypeParameter = " ",
 	},
-
-	exclude_filetype = {
-		"help",
-		"startify",
-		"dashboard",
-		"packer",
-		"neogitstatus",
-		"NvimTree",
-		"Trouble",
-		"alpha",
-		"lir",
-		"Outline",
-		"spectre_panel",
-		"toggleterm",
-		"qf",
-	},
+	highlight = true,
+	separator = " > ",
+	depth_limit = 0,
+	depth_limit_indicator = "..",
 })
