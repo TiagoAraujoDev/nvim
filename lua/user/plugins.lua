@@ -61,7 +61,10 @@ return packer.startup(function(use)
   use { "karb94/neoscroll.nvim", commit = "54c5c419f6ee2b35557b3a6a7d631724234ba97a" }
   use { "folke/todo-comments.nvim", commit = "96391ae41e63a5edba260adfd7312462b54ddc8e" }
   use { "kylechui/nvim-surround", commit = "81f672ad6525b5d8cc27bc6ff84636cc12664485" }
+
+  -- Navigation
   use { "ChristianChiarulli/harpoon", commit = "a2487c29dba9c3befbb57ccd8773b7f617fc593a" }
+  use { "ghillb/cybu.nvim", commit = "9439962d238e29aaa070c759d56f997384a53ed6" }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
