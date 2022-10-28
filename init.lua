@@ -27,5 +27,3 @@ require "user.surround"
 require "user.winbar"
 require "user.navic"
 require "user.cybu"
-
-vim.o.winbar = "%{%v:lua.require'user.navic'.eval()%}"
