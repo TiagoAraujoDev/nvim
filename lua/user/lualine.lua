@@ -36,6 +36,44 @@ local location = {
 local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
+-- local mode_color = {
+--   n = "blue",
+--   i = "orange",
+--   v = "#b668cd",
+--   [""] = "#b668cd",
+--   V = "#b668cd",
+--   -- c = '#B5CEA8',
+--   -- c = '#D7BA7D',
+--   c = "#46a6b2",
+--   no = "#D16D9E",
+--   s = "green",
+--   S = "orange",
+--   [""] = "orange",
+--   ic = "red",
+--   R = "#D16D9E",
+--   Rv = "red",
+--   cv = "blue",
+--   ce = "blue",
+--   r = "red",
+--   rm = "#46a6b2",
+--   ["r?"] = "#46a6b2",
+--   ["!"] = "#46a6b2",
+--   t = "red",
+-- }
+
+local mode = {
+  -- mode component
+  function()
+    -- return "    "
+    return "    "
+    -- return "    "
+  end,
+  -- color = function()
+  --   auto change color according to neovims mode
+  --   return { fg = mode_color[vim.fn.mode()], bg = gray }
+  -- end,
+  padding = 0,
+}
 
 lualine.setup {
   options = {
@@ -48,7 +86,7 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = { "mode" },
+    lualine_a = { mode },
     lualine_b = {"branch"},
     lualine_c = { diagnostics },
     lualine_x = { diff, spaces, "encoding", filetype },
