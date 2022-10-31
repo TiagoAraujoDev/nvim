@@ -61,6 +61,7 @@ return packer.startup(function(use)
   use { "karb94/neoscroll.nvim", commit = "54c5c419f6ee2b35557b3a6a7d631724234ba97a" }
   use { "folke/todo-comments.nvim", commit = "96391ae41e63a5edba260adfd7312462b54ddc8e" }
   use { "kylechui/nvim-surround", commit = "81f672ad6525b5d8cc27bc6ff84636cc12664485" }
+  use { "christoomey/vim-tmux-navigator", commit = "9ca5bfe5bd274051b5dd796cc150348afc993b80" }
 
   -- Navigation
   use { "ChristianChiarulli/harpoon", commit = "a2487c29dba9c3befbb57ccd8773b7f617fc593a" }
