@@ -170,7 +170,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	callback = function()
 		vim.cmd([[ 
-      hi NavicText ctermfg=11 guifg=#565c64 guibg=#282c34
+      hi NavicText ctermfg=11 guifg=#565c64 guibg=NONE
     ]])
 	end,
 })
@@ -237,7 +237,7 @@ function M.filename()
 
 		vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color })
 
-		return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LineNr#" .. file_name .. "%*"
+		return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. file_name
 	end
 end
 
@@ -262,7 +262,7 @@ function M.eval()
 	local modified = vim.api.nvim_eval_statusline("%m", {}).str == "[+]" and icons.ui.BigCircle or ""
 
 	if not isempty(navic.get_location()) then
-		return filename .. " " .. icons.ui.ChevronRight .. " " .. navic.get_location() .. " " .. modified
+		return filename .. " " .. "%#LineNr#" .. ">" .. "%*" .. " " .. navic.get_location() .. " " .. modified
 	elseif isempty(navic.get_location()) then
 		return filename .. " " .. modified
 	end
