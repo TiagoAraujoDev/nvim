@@ -67,6 +67,8 @@ keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>b", ":Telescope buffers initial_mode=normal<CR><ESC>", opts)
+keymap("n", "<leader>fk", ":Telescope keymaps<CR>", opts)
+keymap("n", "<leader>fc", ":Telescope colorscheme<CR>", opts)
 
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)

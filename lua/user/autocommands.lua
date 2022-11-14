@@ -120,4 +120,18 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.cmd [[ 
+      hi rainbowcol1 guifg=#e06c75
+    ]]
+	end,
+})
 
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.cmd [[ 
+      hi CursorLineNr cterm=underline ctermfg=11 gui=bold guifg=#aaaaaa guibg=NONE
+    ]]
+	end,
+})

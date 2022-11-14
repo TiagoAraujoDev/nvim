@@ -62,6 +62,7 @@ return packer.startup(function(use)
   use { "folke/todo-comments.nvim", commit = "96391ae41e63a5edba260adfd7312462b54ddc8e" }
   use { "kylechui/nvim-surround", commit = "81f672ad6525b5d8cc27bc6ff84636cc12664485" }
   use { "christoomey/vim-tmux-navigator", commit = "9ca5bfe5bd274051b5dd796cc150348afc993b80" }
+  use { "j-hui/fidget.nvim", commit = "2cf9997d3bde2323a1a0934826ec553423005a26" }
 
   -- Navigation
   use { "ChristianChiarulli/harpoon", commit = "a2487c29dba9c3befbb57ccd8773b7f617fc593a" }
@@ -102,6 +103,7 @@ return packer.startup(function(use)
     commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
   }
   use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" }
+  use { "p00f/nvim-ts-rainbow", commit = "fad8badcd9baa4deb2cf2a5376ab412a1ba41797" }
 
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }

@@ -8,8 +8,14 @@ require("telescope").load_extension("harpoon")
 
 telescope.setup({
 	defaults = {
-		prompt_prefix = "  ",
-		selection_caret = " ",
+    -- Options for search prompt
+		prompt_prefix = "  ",
+		-- prompt_prefix = "  ",
+
+    -- Options for current item mark
+		selection_caret = " ",
+		-- selection_caret = " ",
+
 		path_display = { "smart" },
 		file_ignore_patterns = { ".git/", "node_modules" },
 		mappings = {
