@@ -1,3 +1,4 @@
+-- Close with "q"
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "qf", "help", "man", "lspinfo", "spectre_panel" },
 	callback = function()
@@ -8,6 +9,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
+-- Set spell checking for markdown and gitcommit
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "gitcommit"},
 	callback = function()
@@ -26,14 +28,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 
 vim.cmd("autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif")
 
--- vim.api.nvim_create_autocmd({ "BufEnter" }, {
---   callback = function()
---     vim.cmd [[
---       if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
---     ]]
---   end,
--- })
-
 vim.api.nvim_create_autocmd({ "VimResized" }, {
 	callback = function()
 		vim.cmd("tabdo wincmd =")
@@ -45,25 +39,22 @@ vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
 		vim.cmd("quit")
 	end,
 })
+
+-- After a comment line don't comment again
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	callback = function()
 		vim.cmd("set formatoptions-=cro")
 	end,
 })
 
+-- Yank visual effect
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
 	callback = function()
 		vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
 	end,
 })
 
--- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
--- 	pattern = { "*.java" },
--- 	callback = function()
--- 		vim.lsp.codelens.refresh()
--- 	end,
--- })
-
+-- Illuminate highlight config
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	callback = function()
 		vim.cmd [[ 
@@ -120,6 +111,7 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	end,
 })
 
+-- Modify ts-rainbow color
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	callback = function()
 		vim.cmd [[ 
@@ -128,10 +120,20 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	end,
 })
 
+-- Fix the column number bg
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	callback = function()
 		vim.cmd [[ 
       hi CursorLineNr cterm=underline ctermfg=11 gui=bold guifg=#aaaaaa guibg=NONE
+    ]]
+	end,
+})
+
+-- Fix the cmp menu item bg
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+	callback = function()
+		vim.cmd [[ 
+      hi CmpItemAbbr guifg=#abb2bf guibg=NONE
     ]]
 	end,
 })

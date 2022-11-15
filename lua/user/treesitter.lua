@@ -36,16 +36,19 @@ configs.setup({
 		extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
 		max_file_lines = nil, -- Do not enable for files with more than n lines, int
 		colors = {
-      "#e06c75",
-      "#98c379",
-      "#e5c07b",
-      "#61afef",
-      "#c678dd",
-      "#56b6c2",
-      "#be5046",
-      "#d19a66",
-      "#b45bcf",
-    }, -- table of hex strings
+			-- "#e06c75",
+			-- "#98c379",
+			-- "#e5c07b",
+			-- "#61afef",
+			-- "#c678dd",
+			-- "#56b6c2",
+			-- "#be5046",
+			-- "#d19a66",
+			-- "#b45bcf",
+			"Orchid",
+			"DodgerBlue",
+			"Gold",
+		}, -- table of hex strings
 		-- termcolors = {} -- table of colour name strings
 	},
 	autopairs = {
