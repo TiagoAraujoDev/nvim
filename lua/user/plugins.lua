@@ -104,6 +104,7 @@ return packer.startup(function(use)
   }
   use { "JoosepAlviste/nvim-ts-context-commentstring", commit = "4d3a68c41a53add8804f471fcc49bb398fe8de08" }
   use { "p00f/nvim-ts-rainbow", commit = "fad8badcd9baa4deb2cf2a5376ab412a1ba41797" }
+  use { "windwp/nvim-ts-autotag", commit = "99ba1f6d80842a4d82ff49fc0aa094fb9d199219" }
 
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
