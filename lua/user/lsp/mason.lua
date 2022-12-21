@@ -1,15 +1,21 @@
 local servers = {
 	"sumneko_lua",
+  "jdtls",
+  "gopls",
 	"cssls",
 	"html",
 	"tsserver",
+  "prismals",
 	"pyright",
+  "clangd",
 	"bashls",
 	"jsonls",
 	"yamlls",
+  "dotls",
 }
 
 require'lspconfig'.emmet_ls.setup{}
+require'lspconfig'.cssmodules_ls.setup{}
 
 local settings = {
 	ui = {

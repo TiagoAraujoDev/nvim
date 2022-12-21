@@ -55,6 +55,14 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
+-- Jaq
+keymap("n", "<A-r>", ":Jaq<CR>", opts)
+
+-- Lab
+keymap("n", "<A-0>", ":Lab code run<CR>", opts)
+keymap("n", "<A-9>", ":Lab code stop<CR>", opts)
+
+
 -- Harpoon
 keymap("n", "<TAB>", ":Telescope harpoon marks initial_mode=normal<CR>", opts)
 keymap("n", "mm", ":lua require('harpoon.mark').add_file()<CR>")

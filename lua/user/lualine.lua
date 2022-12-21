@@ -11,9 +11,21 @@ local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
+  diagnostics_color = {
+    -- Same values as the general color option can be used here.
+    error = 'DiagnosticError', -- Changes diagnostics' error color.
+    warn  = 'Tag',  -- Changes diagnostics' warn color.
+  },
   symbols = { error = " ", warn = " " },
   colored = true,
   always_visible = true,
+}
+
+local branchIcon = "%#Todo#" .. " " .. "%*" .. "%#TSoperator#"
+local branch = {
+  "branch",
+  icon = branchIcon,
+  -- color = { bg = "#3e4451", gui = "italic"}
 }
 
 local diff = {
@@ -40,7 +52,11 @@ end
 local mode = {
   -- mode component
   function()
-    return " "
+    -- return " "
+    -- return " "
+    -- return " "
+    -- return " "
+    return " "
   end,
   padding = 1,
 }
@@ -61,7 +77,7 @@ lualine.setup {
   },
   sections = {
     lualine_a = { mode },
-    lualine_b = {"branch"},
+    lualine_b = { branch },
     lualine_c = { diagnostics },
     lualine_x = { diff, spaces, "encoding", filetype },
     lualine_y = { location },

@@ -12,11 +12,16 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup {
   debug = false,
   sources = {
+    diagnostics.golangci_lint,
+    formatting.goimports,
+    formatting.gofumpt,
+    formatting.google_java_format,
     -- formatting.prettierd,
     formatting.eslint_d,
     diagnostics.eslint_d,
     formatting.black.with { extra_args = { "--fast" } },
     diagnostics.flake8,
     formatting.stylua,
+    formatting.clang_format
   },
 }

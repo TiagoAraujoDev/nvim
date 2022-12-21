@@ -18,4 +18,4 @@ surround.setup {
   },
 }
 
-vim.cmd [[nmap <leader>' siw']]
+vim.cmd [[nmap <leader>' siw"]]
