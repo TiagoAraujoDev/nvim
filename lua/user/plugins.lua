@@ -109,17 +109,6 @@ return packer.startup(function(use)
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
 
-  -- DAP
-  use { "mfussenegger/nvim-dap", commit = "6b12294a57001d994022df8acbe2ef7327d30587" }
-  use { "rcarriga/nvim-dap-ui", commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13" }
-  use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
-  use { "mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"} }
-  use {
-    "microsoft/vscode-js-debug",
-    opt = true,
-    run = "npm install --legacy-peer-deps && npm run compile" 
-  }
-
   -- Navic
   use { "SmiteshP/nvim-navic", requires = "neovim/nvim-lspconfig", commit = "cfae8efd9cae64195d66b40067d59c534a970712" }
   use { "feline-nvim/feline.nvim", commit = "f26dd12e5b0e39a8dd2abcb46066c250b5651de9"}

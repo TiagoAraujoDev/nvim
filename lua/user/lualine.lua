@@ -17,7 +17,7 @@ local diagnostics = {
     warn  = 'Tag',  -- Changes diagnostics' warn color.
   },
   symbols = { error = " ", warn = " " },
-  colored = true,
+  colored = false,
   always_visible = true,
 }
 
@@ -65,7 +65,7 @@ lualine.setup {
   options = {
     globalstatus = true,
     icons_enabled = true,
-    theme = "auto",
+    theme = "tokyonight",
     component_separators = { left = "", right = "" },
 
     -- styling section separators options 
