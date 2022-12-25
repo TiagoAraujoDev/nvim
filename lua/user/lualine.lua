@@ -7,25 +7,24 @@ local hide_in_width = function()
   return vim.fn.winwidth(0) > 80
 end
 
+-- diagnostics highlight
+vim.api.nvim_set_hl(0, "DiagnosticWarn", { fg = "#e3c817" })
 local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
   sections = { "error", "warn" },
-  diagnostics_color = {
-    -- Same values as the general color option can be used here.
-    error = 'DiagnosticError', -- Changes diagnostics' error color.
-    warn  = 'Tag',  -- Changes diagnostics' warn color.
-  },
   symbols = { error = " ", warn = " " },
-  colored = false,
+  colored = true,
   always_visible = true,
 }
 
-local branchIcon = "%#Todo#" .. " " .. "%*" .. "%#TSoperator#"
+-- branch highlight
+vim.api.nvim_set_hl(0, "GitSignsCorrentLineBlame", { fg = "#9ece6a", bg = "#3b4261" })
+vim.api.nvim_set_hl(0, "GitSignsDeletePreview", { fg = "#7aa2f7", bg = "#3b4261" })
+local branchIcon = "%#GitSignsCorrentLineBlame#" .. " " .. "%*" .. "%#GitSignsDeletePreview#"
 local branch = {
   "branch",
   icon = branchIcon,
-  -- color = { bg = "#3e4451", gui = "italic"}
 }
 
 local diff = {
@@ -56,7 +55,13 @@ local mode = {
     -- return " "
     -- return " "
     -- return " "
-    return " "
+    -- return " "
+    return "ﰆ "
+    -- return " "
+    -- return ""
+    -- return " "
+    -- return " "
+    -- return " "
   end,
   padding = 1,
 }
@@ -69,8 +74,9 @@ lualine.setup {
     component_separators = { left = "", right = "" },
 
     -- styling section separators options 
-    section_separators = { left = "", right = "" },
+    -- section_separators = { left = "", right = "" },
     -- section_separators = { left = "  ", right = "  " },
+    section_separators = { left = "", right = "" },
 
     disabled_filetypes = { "alpha", "dashboard" },
     always_divide_middle = true,

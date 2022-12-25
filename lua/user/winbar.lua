@@ -7,213 +7,31 @@ end
 local icons = require("user.icons")
 
 -- Highlight winbar
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsNamespace TSNamespace
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsEnum CmpItemKindEnum
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsEnumMember CmpItemKindEnumMember
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsKey CmpItemKindKey
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsPackage CmpItemKindPackage
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsTypeParameter CmpItemKindTypeParameter
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsEvent CmpItemKindEvent
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsConstructor CmpItemKindConstructor
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsOperator CmpItemKindOperator
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsField CmpItemKindField
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsStruct CmpItemKindStruct
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsProperty CmpItemKindProperty
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsInterface CmpItemKindInterface
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsConstant CmpItemKindConstant
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsNumber CmpItemKindValue
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsClass CmpItemKindClass
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsBoolean TSBoolean
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsArray CmpItemKindDefault
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsString CmpItemKindText
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi link NavicIconsModule CmpItemKindModule
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[ 
-      hi NavicText ctermfg=11 guifg=#565c64 guibg=NONE
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[
-      hi link NavicIconsMethod CmpItemKindMethod
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[
-      hi link NavicIconsVariable CmpItemKindVariable
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[
-      hi link NavicIconsFunction CmpItemKindFunction
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[
-      hi link NavicIconsObject CmpItemKindClass
-    ]])
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd([[
-      hi link NavicIconsString CmpItemKindText
-    ]])
-	end,
-})
+vim.api.nvim_set_hl(0, "NavicIconsNamespace", { fg = "#7dcfff"})
+vim.api.nvim_set_hl(0, "NavicIconsEnum", { fg = "#e3ae1e"})
+vim.api.nvim_set_hl(0, "NavicIconsEnumMember", { fg = "#e36c39"})
+vim.api.nvim_set_hl(0, "NavicIconsKey", { fg = "#40d68e"})
+vim.api.nvim_set_hl(0, "NavicIconsPackage", { fg = "#34c40c"})
+vim.api.nvim_set_hl(0, "NavicIconsTypeParameter", { fg = "#2c8bb8"})
+vim.api.nvim_set_hl(0, "NavicIconsEvent", { fg = "#1151ab"})
+vim.api.nvim_set_hl(0, "NavicIconsConstructor", { fg = "#837cd9"})
+vim.api.nvim_set_hl(0, "NavicIconsOperator", { fg = "#bf0b23"})
+vim.api.nvim_set_hl(0, "NavicIconsField", { fg = "#e3ae1e"})
+vim.api.nvim_set_hl(0, "NavicIconsStruct", { fg = "#7dcfff"})
+vim.api.nvim_set_hl(0, "NavicIconsProperty", { fg = "#1151ab"})
+vim.api.nvim_set_hl(0, "NavicIconsInterface", { fg = "#e36c39"})
+vim.api.nvim_set_hl(0, "NavicIconsConstant", { fg = "#bf0b23"})
+vim.api.nvim_set_hl(0, "NavicIconsNumber", { fg = "#e3ae1e"})
+vim.api.nvim_set_hl(0, "NavicIconsClass", { fg = "#34c40c"})
+vim.api.nvim_set_hl(0, "NavicIconsBoolean", { fg = "#e36c39"})
+vim.api.nvim_set_hl(0, "NavicIconsArray", { fg = "#e3ae1e"})
+vim.api.nvim_set_hl(0, "NavicIconsModule", { fg = "#e36c39"})
+vim.api.nvim_set_hl(0, "NavicText", { fg = "#565c64", bg = "none"})
+vim.api.nvim_set_hl(0, "NavicIconsMethod", { fg = "#bf0b23"})
+vim.api.nvim_set_hl(0, "NavicIconsVariable", { fg = "#1151ab"})
+vim.api.nvim_set_hl(0, "NavicIconsFunction", { fg = "#1151ab"})
+vim.api.nvim_set_hl(0, "NavicIconsObject", { fg = "#bf0b23"})
+vim.api.nvim_set_hl(0, "NavicIconsString", { fg = "#34c40c"})
 
 function M.filename()
 	local file_name = vim.fn.expand("%:t")
