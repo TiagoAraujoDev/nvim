@@ -53,10 +53,10 @@ local mode = {
   function()
     -- return " "
     -- return " "
-    -- return " "
+    return " "
     -- return " "
     -- return " "
-    return "ﰆ "
+    -- return "ﰆ "
     -- return " "
     -- return ""
     -- return " "

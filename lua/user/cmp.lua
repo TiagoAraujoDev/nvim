@@ -113,7 +113,7 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
-    { name = 'lab.quick_data', keyword_length = 4 },
+    { name = 'lab.quick_data', Keyword_length = 4 },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
