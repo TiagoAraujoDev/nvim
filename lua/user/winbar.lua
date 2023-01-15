@@ -53,6 +53,10 @@ function M.filename()
 
 		local hl_group = "FileIconColor" .. extension
 
+    if not file_icon then
+      file_icon = ""
+    end
+
 		vim.api.nvim_set_hl(0, hl_group, { fg = file_icon_color })
 
 		return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. file_name
