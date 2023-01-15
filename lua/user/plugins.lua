@@ -116,7 +116,7 @@ return packer.startup(function(use)
 
   -- Code runner
   use { "is0n/jaq-nvim", commit = "236296aae555657487d1bb4d066cbde9d79d8cd4" }
-  use { '0x100101/lab.nvim', run = 'cd js && npm ci', requires = { 'nvim-lua/plenary.nvim' } }
+  use { "0x100101/lab.nvim", run = "cd js && npm ci", requires = "nvim-lua/plenary.nvim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
