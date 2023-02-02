@@ -61,18 +61,25 @@ return packer.startup(function(use)
   use { "karb94/neoscroll.nvim", commit = "54c5c419f6ee2b35557b3a6a7d631724234ba97a" }
   use { "folke/todo-comments.nvim", commit = "96391ae41e63a5edba260adfd7312462b54ddc8e" }
   use { "kylechui/nvim-surround", commit = "81f672ad6525b5d8cc27bc6ff84636cc12664485" }
-  use { "christoomey/vim-tmux-navigator", commit = "9ca5bfe5bd274051b5dd796cc150348afc993b80" }
+  -- use { "christoomey/vim-tmux-navigator", commit = "9ca5bfe5bd274051b5dd796cc150348afc993b80" }
   use { "j-hui/fidget.nvim", commit = "2cf9997d3bde2323a1a0934826ec553423005a26" }
 
   -- Navigation
   use { "ChristianChiarulli/harpoon", commit = "a2487c29dba9c3befbb57ccd8773b7f617fc593a" }
   use { "ghillb/cybu.nvim", commit = "9439962d238e29aaa070c759d56f997384a53ed6" }
+  use { "jinh0/eyeliner.nvim", config = function ()
+    require"eyeliner".setup {
+      highlight_on_key = true,
+      dim = true
+    }
+  end, commit = "" }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
   use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
   use { "RRethy/nvim-base16", commit = "52e077ffadf3c03d2186515091fa9a88a1f950ac" }
   use { 'NvChad/nvim-colorizer.lua', commit = "9dd7ecde55b06b5114e1fa67c522433e7e59db8b" }
+  use { "EdenEast/nightfox.nvim" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin

@@ -66,6 +66,60 @@ local mode = {
   padding = 1,
 }
 
+local lsp = {
+  function(msg)
+    msg = msg or "LS Inactive"
+    local buf_clients = vim.lsp.buf_get_clients()
+    if next(buf_clients) == nil then
+      -- TODO: clean up this if statement
+      if type(msg) == "boolean" or #msg == 0 then
+        return "LS Inactive"
+      end
+      return msg
+    end
+    -- local buf_ft = vim.bo.filetype
+    local buf_client_names = {}
+
+    -- add client
+    for _, client in pairs(buf_clients) do
+      if client.name ~= "null-ls" and client.name ~= "copilot" then
+        table.insert(buf_client_names, client.name)
+      end
+    end
+
+    -- add formatter
+    -- local formatters = require "lvim.lsp.null-ls.formatters"
+    -- local supported_formatters = formatters.list_registered(buf_ft)
+    -- vim.list_extend(buf_client_names, supported_formatters)
+
+    -- add linter
+    -- local linters = require "lvim.lsp.null-ls.linters"
+    -- local supported_linters = linters.list_registered(buf_ft)
+    -- vim.list_extend(buf_client_names, supported_linters)
+
+    local unique_client_names = vim.fn.uniq(buf_client_names)
+
+    local language_servers = " LSP: " .. table.concat(unique_client_names, ", ") .. " "
+
+    return language_servers
+  end,
+  color = { gui = "bold" },
+  cond = hide_in_width,
+}
+
+local treesitter = {
+  function ()
+    local buf = vim.api.nvim_get_current_buf()
+    local highlighter = vim.treesitter.highlighter
+    if highlighter.active[buf] then
+     -- treesitter highlighting is enabled
+      return " "
+    end
+    return ""
+  end,
+  color = { fg = "#41a32f"}
+}
+
 lualine.setup {
   options = {
     globalstatus = true,
@@ -85,7 +139,7 @@ lualine.setup {
     lualine_a = { mode },
     lualine_b = { branch },
     lualine_c = { diagnostics },
-    lualine_x = { diff, spaces, "encoding", filetype },
+    lualine_x = { lsp, treesitter, diff, filetype },
     lualine_y = { location },
     lualine_z = { "progress" },
   },

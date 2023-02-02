@@ -8,6 +8,14 @@ if not status_ok then
 	return
 end
 
+-- vim.api.nvim_set_hl(0, "rainbowcol1", { fg = "#C5BD00"})
+-- vim.api.nvim_set_hl(0, "rainbowcol2", { fg = "#C678DD"})
+-- vim.api.nvim_set_hl(0, "rainbowcol3", { fg = "#628BDA"})
+-- vim.api.nvim_set_hl(0, "rainbowcol4", { fg = "#C5BD00"})
+-- vim.api.nvim_set_hl(0, "rainbowcol5", { fg = "#C678DD"})
+-- vim.api.nvim_set_hl(0, "rainbowcol6", { fg = "#628BDA"})
+-- vim.api.nvim_set_hl(0, "rainbowcol7", { fg = "#C5BD00"})
+
 configs.setup({
 	ensure_installed = "all", -- one of "all" or a list of languages
 	sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
@@ -28,23 +36,14 @@ configs.setup({
   -- Parantheses, curly brackets and brackets highlight
 	rainbow = {
 		enable = true,
-		-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+		disable = { "php", "cpp", "html" }, -- list of languages you want to disable the plugin for
 		extended_mode = false, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
 		max_file_lines = nil, -- Do not enable for files with more than n lines, int
-		colors = {
-			-- "#e06c75",
-			-- "#98c379",
-			-- "#e5c07b",
-			-- "#61afef",
-			-- "#c678dd",
-			-- "#56b6c2",
-			-- "#be5046",
-			-- "#d19a66",
-			-- "#b45bcf",
-			"Orchid",
-			"DodgerBlue",
-			"Gold",
-		}, -- table of hex strings
+    colors = {
+      "DodgerBlue",
+      "Orchid",
+      "Gold",
+    },
 		-- termcolors = {} -- table of colour name strings
 	},
 

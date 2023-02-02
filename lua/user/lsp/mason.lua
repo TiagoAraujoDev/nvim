@@ -1,4 +1,5 @@
 local servers = {
+  "phpactor",
 	"sumneko_lua",
   "jdtls",
   "gopls",
@@ -16,6 +17,7 @@ local servers = {
 
 require'lspconfig'.emmet_ls.setup{}
 require'lspconfig'.cssmodules_ls.setup{}
+require'lspconfig'.tailwindcss.setup{}
 
 local settings = {
 	ui = {

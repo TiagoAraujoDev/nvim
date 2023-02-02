@@ -111,15 +111,6 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	end,
 })
 
--- Modify ts-rainbow color
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-	callback = function()
-		vim.cmd [[ 
-      hi rainbowcol1 guifg=#e06c75
-    ]]
-	end,
-})
-
 -- Fix the column number bg
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	callback = function()
