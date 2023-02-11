@@ -51,17 +51,53 @@ end
 local mode = {
   -- mode component
   function()
-    -- return " "
+    local file_ext = vim.fn.expand("%:e")
+
+    if file_ext == "tsx" or file_ext == "jsx" then
+      return "ﰆ "
+    end
+
+    if file_ext == "ts" then
+      return "ﯤ "
+    end
+
+    if file_ext == "js" then
+      return " "
+    end
+
+    if file_ext == "py" then
+      return " "
+    end
+
+    if file_ext == "md" then
+      return " "
+    end
+
+    if file_ext == "json" then
+      return "ﬥ "
+    end
+
+    if file_ext == "lua" then
+      return " "
+    end
+
+    if file_ext == "php" then
+      return " "
+    end
+
+    if file_ext == "" then
+      return " "
+    end
+
+    -- return " "
+    return " "
     -- return " "
-    return " "
     -- return " "
     -- return " "
-    -- return "ﰆ "
     -- return " "
     -- return ""
     -- return " "
     -- return " "
-    -- return " "
   end,
   padding = 1,
 }
@@ -108,26 +144,26 @@ local lsp = {
 }
 
 local treesitter = {
-  function ()
+  function()
     local buf = vim.api.nvim_get_current_buf()
     local highlighter = vim.treesitter.highlighter
     if highlighter.active[buf] then
-     -- treesitter highlighting is enabled
+      -- treesitter highlighting is enabled
       return " "
     end
     return ""
   end,
-  color = { fg = "#41a32f"}
+  color = { fg = "#41a32f" },
 }
 
-lualine.setup {
+lualine.setup({
   options = {
     globalstatus = true,
     icons_enabled = true,
     theme = "tokyonight",
     component_separators = { left = "", right = "" },
 
-    -- styling section separators options 
+    -- styling section separators options
     -- section_separators = { left = "", right = "" },
     -- section_separators = { left = "  ", right = "  " },
     section_separators = { left = "", right = "" },
@@ -143,4 +179,4 @@ lualine.setup {
     lualine_y = { location },
     lualine_z = { "progress" },
   },
-}
+})
