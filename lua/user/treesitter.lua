@@ -8,16 +8,16 @@ if not status_ok then
 	return
 end
 
--- vim.api.nvim_set_hl(0, "rainbowcol1", { fg = "#C5BD00"})
--- vim.api.nvim_set_hl(0, "rainbowcol2", { fg = "#C678DD"})
--- vim.api.nvim_set_hl(0, "rainbowcol3", { fg = "#628BDA"})
--- vim.api.nvim_set_hl(0, "rainbowcol4", { fg = "#C5BD00"})
--- vim.api.nvim_set_hl(0, "rainbowcol5", { fg = "#C678DD"})
--- vim.api.nvim_set_hl(0, "rainbowcol6", { fg = "#628BDA"})
--- vim.api.nvim_set_hl(0, "rainbowcol7", { fg = "#C5BD00"})
+vim.api.nvim_set_hl(0, "rainbowcol1", { fg = "#C5BD00"})
+vim.api.nvim_set_hl(0, "rainbowcol2", { fg = "#C678DD"})
+vim.api.nvim_set_hl(0, "rainbowcol3", { fg = "#628BDA"})
+vim.api.nvim_set_hl(0, "rainbowcol4", { fg = "#C5BD00"})
+vim.api.nvim_set_hl(0, "rainbowcol5", { fg = "#C678DD"})
+vim.api.nvim_set_hl(0, "rainbowcol6", { fg = "#628BDA"})
+vim.api.nvim_set_hl(0, "rainbowcol7", { fg = "#C5BD00"})
 
 configs.setup({
-	ensure_installed = "all", -- one of "all" or a list of languages
+	ensure_installed = { "python", "javascript" }, -- one of "all" or a list of languages
 	sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
   auto_install = true, -- Automatic install the parse when enter the file
 	ignore_install = { "" }, -- List of parsers to ignore installing

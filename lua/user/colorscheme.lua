@@ -61,8 +61,8 @@ require("tokyonight").setup({
 })
 
 -- local colorscheme = "tokyonight"
-local colorscheme = "darkplus"
--- local colorscheme = "base16-onedark"
+-- local colorscheme = "darkplus"
+local colorscheme = "base16-onedark"
 -- local colorscheme = "base16-ia-dark"
 -- local colorscheme = "base16-dracula"
 -- local colorscheme = "base16-synth-midnight-dark"
